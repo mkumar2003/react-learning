@@ -120,23 +120,15 @@ app.listen(config.port, () => {
 ```
 
 ## Q: What are `React Hooks`?
-A: In React version 16.8, React introduced a new pattern called Hooks. React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component. Hooks can be stateful and can manage side-effects.
-Hooks allow you to reuse stateful logic without changing your component hierarchy. This makes it easy to share Hooks among many components or with the community.
-### React provides a bunch of standard in-built hooks:
-- useState: To manage states. Returns a stateful value and an updater function to update it.
-- useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.
-- useContext: To return the current value for a context.
-- useReducer: A useState alternative to help with complex state management.
-- useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.
-- useMemo: It returns a memoized value that helps in performance optimizations.
-- useRef: It returns a ref object with a current property. The ref object is mutable. It is mainly used to access a child component imperatively.
-- useLayoutEffect: It fires at the end of all DOM mutations. It's best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.
-- useDebugValue: Helps to display a label in React DevTools for custom hooks.
+A: React Hooks are functions that allow you to use state and other React features in functional components. Before Hooks were introduced in React 16.8, state and lifecycle methods were only available in class components. Hooks enable functional components to manage state, perform side effects, and handle other complex functionality, making your code more readable and easier to manage.
+-State Hook (useState): This Hook allows you to add state to functional components. It returns an array containing the current state value and a function to update it. You can use multiple useState calls to manage multiple pieces of state.
+
+-Effect Hook (useEffect): This Hook lets you perform side effects in your components, such as fetching data, directly updating the DOM, or setting up subscriptions. It replaces lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount.
 
 
 ## Q: Why do we need `useState Hook`?
 A: `useState hook` is used to maintain the state in our React application. It keeps track of the state changes so basically useState has the ability to encapsulate local state in a functional component.
-The  useState hook is a special function that takes the `initial state` as an `argument` and `returns an array` of two entries.  UseState encapsulate only singular value from the state, for multiple state need to have useState calls.
+The  useState hook is a special function that takes the `initial state` as an `argument` and `returns an array` of two entries.
 #### Syntax for useState hook
 ```
 const [state, setState] = useState(initialstate);
@@ -146,9 +138,3 @@ const [state, setState] = useState(initialstate);
 import React, { useState } from "react";
 ```
 we can use Hooks in Functional Components
-```
-const Example = (props) => {
-  // You can use Hooks here!
-  return <div />;
-}
-```
